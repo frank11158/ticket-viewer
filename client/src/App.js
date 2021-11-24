@@ -1,22 +1,31 @@
-import './App.css';
+import { useState, useEffect } from "react"
+import Tickets from "./components/Tickets"
 
 function App() {
+  const [tickets, setTickets] = useState([])
+
+  useEffect(() => {
+    const getTickets = async () => {
+      const ticketsFromServer = await fetchTickets()
+      setTickets(ticketsFromServer)
+    }
+
+    getTickets()
+  }, [])
+
+  // Fetch Tickets
+  const fetchTickets = async () => {
+    const res = await fetch('http://localhost:5000/tickets')
+    const data = await res.json()
+    
+    return data
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <>
+        {tickets.length > 0 ? <Tickets tickets={tickets} /> : 'No Ticket to Show'}
+      </>
     </div>
   );
 }
