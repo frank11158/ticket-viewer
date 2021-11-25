@@ -14,7 +14,7 @@ func InitRouter() *gin.Engine {
 
 	router.GET("/heartBeat", controllers.HeartBeat)
 
-	apiv1 := router.Group("/v1")
+	apiv1 := router.Group("api/v1")
 	{
 		apiv1.GET("/tickets", v1.GetTickets)
 	}
