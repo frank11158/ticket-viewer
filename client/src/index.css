@@ -1,1 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 700px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height: 300px;
+    border: 1px solid steelblue;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.ticket {
+    background: #f4f4f4;
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+  
+.ticket.reminder {
+    border-left: 5px solid green;
+}
+  
+.ticket h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.block {
+    margin: 2px;
+    display: inline-block
+}
+
+.block.status {
+    border: 2px solid steelblue;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.subject {
+    margin: 10px auto;
+}
+
+.description {
+    margin: 10px auto;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
