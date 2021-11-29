@@ -18,7 +18,10 @@ func ReadConfig(configPath string) {
 	viper.BindEnv("READ_TIMEOUT")
 	viper.SetDefault("WRITE_TIMEOUT", 60)
 	viper.BindEnv("WRITE_TIMEOUT")
+	viper.BindEnv("ALLOWED_ORIGINS")
 	viper.BindEnv("ZENDESK_DOMAIN")
+	viper.BindEnv("ZENDESK_CRED_EMAIL")
+	viper.BindEnv("ZENDESK_CRED_API_TOKEN")
 
 	if err := viper.ReadInConfig(); err != nil {
 		log.Println(err.Error())

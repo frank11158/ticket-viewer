@@ -8,6 +8,7 @@ const (
 
 const (
 	ERROR_AUTH = iota + 10000
+	ERROR_API
 )
 
 type ErrorCode struct {

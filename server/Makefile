@@ -1,4 +1,4 @@
-.PHONY: install deploy build login push clean tool lint help
+.PHONY: install clean tool lint help
 .DEFAULT: help
 
 ENV_LIST=$(shell basename -a -s .env env/*.env)

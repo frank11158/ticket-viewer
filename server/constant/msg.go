@@ -5,6 +5,7 @@ var MsgFlags = map[int]string{
 	INVALID_PARAMS: "Invalid params error",
 	ERROR:          "Fail",
 	ERROR_AUTH:     "Auth fail",
+	ERROR_API:      "Zendesk API failed",
 }
 
 func GetMsg(code int) string {
