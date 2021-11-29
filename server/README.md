@@ -22,3 +22,6 @@ It will read `.env` from the project root directory as the config file. The form
 - `ZENDESK_DOMAIN`: Zendesk domain. **Required**
 - `ZENDESK_CRED_EMAIL`: Zendesk credential: email **Required**
 - `ZENDESK_CRED_API_TOKEN`: Zendesk credential: API token **Required**
+
+## Run Tests
+To run tests, please execute `make test` it will run all unit tests written in this project. After running, a `test.out` coverage report will show in project root directory.
