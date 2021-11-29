@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link, useParams } from 'react-router-dom'
+import config from '../config/local'
 
 const Details = ({ tickets, setAPIErr }) => {
     const [ticket, setTicket] = useState()
@@ -38,7 +39,7 @@ const Details = ({ tickets, setAPIErr }) => {
 
     // Fetch user info
     const fetchUserInfo = async (userID) => {
-        const res = await fetch(`http://localhost:25976/api/v1/users/${userID}`)
+        const res = await fetch(`${config.server.host}:${config.server.port}/api/v1/users/${userID}`)
         const data = await res.json()
         
         return data

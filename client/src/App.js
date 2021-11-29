@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import config from './config/local'
 import Header from "./components/Header"
 import Tickets from "./components/Tickets"
 import Details from "./components/Details"
@@ -37,7 +38,7 @@ function App() {
 
   // Fetch Tickets
   const fetchTickets = async (currentPage, perPage) => {
-    const res = await fetch(`http://localhost:25976/api/v1/tickets?page=${currentPage}&per_page=${perPage}`)
+    const res = await fetch(`${config.server.host}:${config.server.port}/api/v1/tickets?page=${currentPage}&per_page=${perPage}`)
     const data = await res.json()
     
     return data
